@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Master-Lebenslauf von Daniela Klein – Technical Project Lead für digitale Produkte, E-Commerce und AI.">
+  <title>Daniela Klein | Master-Lebenslauf</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap");
+
+    :root {
+      --frost-white: #f6fff4;
+      --nordic-linen: #e4ded4;
+      --ash-wood: #c9bca8;
+      --pine-smoke: #7a857c;
+      --iron-grey: #5e6462;
+      --paper: #ffffff;
+      --muted-ink: #4c5350;
+      --rule: rgba(94, 100, 98, 0.32);
+      --shadow: 0 24px 70px rgba(46, 56, 51, 0.14);
+      --radius: 2mm;
+      --page-width: 210mm;
+      --page-min-height: 297mm;
+      --content-padding: 16mm;
+      --font-display: "Manrope", "Avenir Next", Avenir, sans-serif;
+      --font-body: "Inter", Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { color-scheme: light; }
+
+    body {
+      margin: 0;
+      background: #dfe5df;
+      color: var(--iron-grey);
+      font: 400 9.4pt/1.55 var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .document {
+      display: grid;
+      gap: 12mm;
+      justify-content: center;
+      padding: 12mm 0 24mm;
+    }
+
+    .page {
+      position: relative;
+      width: var(--page-width);
+      min-height: var(--page-min-height);
+      overflow: hidden;
+      background: var(--frost-white);
+      box-shadow: var(--shadow);
+      break-after: page;
+      page-break-after: always;
+    }
+
+    .page:last-of-type { break-after: auto; page-break-after: auto; }
+
+    .eyebrow,
+    .meta,
+    .date,
+    .label {
+      font-family: var(--font-display);
+      font-size: 7.4pt;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, h4, p { margin-top: 0; }
+    h1, h2, h3, h4 { font-family: var(--font-display); color: var(--iron-grey); }
+
+    h1 {
+      max-width: 128mm;
+      margin-bottom: 4mm;
+      font-size: 29pt;
+      font-weight: 600;
+      letter-spacing: -0.045em;
+      line-height: 1.02;
+    }
+
+    h2 {
+      margin-bottom: 5mm;
+      font-size: 14pt;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin-bottom: 1.2mm;
+      font-size: 10.6pt;
+      font-weight: 700;
+      letter-spacing: -0.018em;
+      line-height: 1.28;
+    }
+
+    h4 {
+      margin-bottom: 1.5mm;
+      font-size: 8.2pt;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    p { margin-bottom: 3mm; }
+    ul { margin: 2.2mm 0 0; padding-left: 4.2mm; }
+    li { margin-bottom: 1.5mm; padding-left: 0.8mm; }
+    li::marker { color: var(--pine-smoke); }
+
+    .skip-link {
+      position: fixed;
+      z-index: 50;
+      top: 4mm;
+      left: 4mm;
+      transform: translateY(-180%);
+      padding: 2.5mm 4mm;
+      background: var(--iron-grey);
+      color: #fff;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    /* START: PAGE 1 — SIDEBAR + INTRODUCTION */
+    .page--intro {
+      display: grid;
+      grid-template-columns: 62mm minmax(0, 1fr);
+      align-items: stretch;
+    }
+
+    .sidebar {
+      position: relative;
+      z-index: 1;
+      padding: 17mm 9mm 15mm 11mm;
+      background: var(--nordic-linen);
+    }
+
+    .portrait-wrap {
+      position: relative;
+      width: 42mm;
+      height: 46mm;
+      margin: 1mm auto 12mm;
+    }
+
+    .portrait-shape {
+      position: absolute;
+      inset: 4mm 0 0 4mm;
+      border-radius: 48% 52% 44% 56% / 58% 42% 58% 42%;
+      background: var(--pine-smoke);
+      transform: rotate(-7deg);
+    }
+
+    .portrait {
+      position: absolute;
+      inset: 0 4mm 4mm 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 1.2mm solid var(--frost-white);
+      border-radius: 50%;
+      background: var(--frost-white);
+      color: var(--iron-grey);
+      font: 600 20pt/1 var(--font-display);
+      letter-spacing: -0.05em;
+    }
+
+    .portrait img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 42%;
+    }
+
+    .sidebar-section {
+      margin-top: 8mm;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .sidebar-section h2 {
+      margin-bottom: 3.2mm;
+      font-size: 8pt;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .contact-list,
+    .plain-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-list li {
+      display: grid;
+      grid-template-columns: 4mm 1fr;
+      gap: 2.2mm;
+      align-items: start;
+      margin-bottom: 2.5mm;
+      padding: 0;
+      overflow-wrap: anywhere;
+      font-size: 8.1pt;
+    }
+
+    .contact-icon {
+      color: var(--iron-grey);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .contact-list a {
+      color: inherit;
+      text-decoration-color: rgba(94, 100, 98, 0.55);
+      text-decoration-thickness: 0.3mm;
+      text-underline-offset: 0.8mm;
+    }
+
+    .contact-list a:hover { text-decoration-color: currentColor; }
+    .contact-list a:focus-visible { outline: 0.7mm solid var(--pine-smoke); outline-offset: 0.8mm; }
+
+    .skill-group { margin-bottom: 4mm; }
+    .skill-group h3 { font-size: 8.3pt; }
+    .skill-group p { margin: 0; font-size: 7.8pt; line-height: 1.5; }
+
+    .language-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 4mm;
+      margin-bottom: 1.3mm;
+      padding: 0;
+      font-size: 8pt;
+    }
+
+    .intro-main { padding: 17mm 16mm 15mm 14mm; }
+    .intro-main > * { position: relative; z-index: 1; }
+
+    .intro-main::after {
+      content: "";
+      position: absolute;
+      top: -28mm;
+      right: -30mm;
+      width: 78mm;
+      height: 70mm;
+      border-radius: 50%;
+      background: rgba(201, 188, 168, 0.26);
+    }
+
+    .role-title {
+      max-width: 112mm;
+      margin-bottom: 5mm;
+      color: var(--muted-ink);
+      font: 600 10pt/1.45 var(--font-display);
+      letter-spacing: 0.01em;
+    }
+
+    .lead {
+      margin-bottom: 11mm;
+      padding-left: 5mm;
+      border-left: 1.2mm solid var(--ash-wood);
+      font-size: 10.1pt;
+      line-height: 1.62;
+    }
+
+    .section {
+      margin-top: 9mm;
+      break-inside: auto;
+      page-break-inside: auto;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 4mm;
+      align-items: center;
+    }
+
+    .section-heading::after {
+      content: "";
+      height: 0.3mm;
+      background: var(--rule);
+    }
+
+    .station {
+      margin-bottom: 8mm;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .station-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4mm;
+      align-items: baseline;
+    }
+
+    .station .company {
+      margin-bottom: 2mm;
+      color: var(--muted-ink);
+      font-size: 8.2pt;
+      font-weight: 600;
+    }
+
+    .date { color: var(--muted-ink); white-space: nowrap; }
+
+    .impact-note {
+      margin-top: 4mm;
+      padding: 3.5mm 4mm;
+      border-radius: var(--radius);
+      background: rgba(122, 133, 124, 0.12);
+      font-size: 8.3pt;
+    }
+    /* END: PAGE 1 — SIDEBAR + INTRODUCTION */
+
+    /* START: FULL-WIDTH FOLLOW-UP CONTENT */
+    .page--content { padding: 15mm var(--content-padding) 17mm; }
+
+    .running-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 8mm;
+      align-items: center;
+      margin-bottom: 11mm;
+      padding-bottom: 3mm;
+      border-bottom: 0.3mm solid var(--rule);
+    }
+
+    .running-head strong { font: 600 10pt/1 var(--font-display); }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: 31mm 1fr;
+      column-gap: 6mm;
+      row-gap: 0;
+    }
+
+    .timeline-entry {
+      display: contents;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .timeline-entry .date-cell,
+    .timeline-entry .content-cell {
+      padding: 0 0 6mm;
+    }
+
+    .timeline-entry .date-cell {
+      border-right: 0.3mm solid var(--rule);
+      padding-right: 5mm;
+    }
+
+    .timeline-entry .content-cell { padding-left: 1mm; }
+    .timeline-entry p { margin-bottom: 1.5mm; }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6mm;
+      margin: 2.5mm 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      margin: 0;
+      padding: 1.1mm 2mm;
+      border: 0.3mm solid rgba(94, 100, 98, 0.42);
+      border-radius: 99px;
+      font-size: 7.2pt;
+      line-height: 1.2;
+    }
+
+    .competency-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 5mm;
+    }
+
+    .competency-card {
+      padding: 5mm;
+      border-top: 1mm solid var(--pine-smoke);
+      background: rgba(255, 255, 255, 0.52);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .competency-card:nth-child(2n) { border-top-color: var(--ash-wood); }
+    .competency-card p { margin: 0; font-size: 8.5pt; }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 5mm;
+    }
+
+    .credential {
+      padding: 4.5mm;
+      border: 0.3mm solid var(--rule);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .credential--featured { background: rgba(201, 188, 168, 0.18); }
+    .credential p { margin: 0; font-size: 8.2pt; }
+    /* END: FULL-WIDTH FOLLOW-UP CONTENT */
+
+    .export-bar {
+      position: fixed;
+      z-index: 20;
+      right: 7mm;
+      bottom: 7mm;
+    }
+
+    .export-button {
+      appearance: none;
+      border: 0;
+      border-radius: 99px;
+      padding: 3.5mm 5.5mm;
+      background: var(--iron-grey);
+      color: #fff;
+      box-shadow: 0 5px 18px rgba(46, 56, 51, 0.24);
+      cursor: pointer;
+      font: 600 8.5pt/1 var(--font-display);
+    }
+
+    .export-button:hover { background: #454b49; }
+    .export-button:focus-visible { outline: 1mm solid var(--ash-wood); outline-offset: 1mm; }
+
+    @page { size: A4; margin: 0; }
+
+    @media print {
+      html, body { background: transparent; }
+      body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .document { display: block; padding: 0; }
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        box-shadow: none;
+        break-after: page;
+        page-break-after: always;
+      }
+      .page:last-of-type { break-after: auto; page-break-after: auto; }
+      .export-bar, .skip-link { display: none !important; }
+    }
+
+    @media screen and (max-width: 850px) {
+      body { font-size: 14px; }
+      .document { display: block; padding: 0; }
+      .page { width: 100%; min-height: 0; box-shadow: none; }
+      .page--intro { grid-template-columns: 1fr; }
+      .sidebar { padding: 12mm 8mm; }
+      .intro-main, .page--content { padding: 12mm 8mm; }
+      .competency-grid, .education-grid { grid-template-columns: 1fr; }
+      .timeline { grid-template-columns: 1fr; }
+      .timeline-entry { display: block; }
+      .timeline-entry .date-cell { border-right: 0; padding: 0 0 1mm; }
+      .timeline-entry .content-cell { padding: 0 0 7mm; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
+
+  <main id="main-content" class="document">
+    <!-- START: PAGE 1 -->
+    <article class="page page--intro" aria-labelledby="resume-title">
+      <!-- START: SIDEBAR — PAGE 1 ONLY -->
+      <aside class="sidebar" aria-label="Kontakt, Kernkompetenzen und Sprachen">
+        <div class="portrait-wrap">
+          <div class="portrait-shape" aria-hidden="true"></div>
+          <div class="portrait"><img src="assets/daniela-klein.jpg" alt="Porträtfoto von Daniela Klein" width="600" height="600"></div>
+        </div>
+
+        <!-- START: CONTACT -->
+        <section class="sidebar-section" aria-labelledby="contact-heading">
+          <h2 id="contact-heading">Kontakt</h2>
+          <ul class="contact-list">
+            <li><span class="contact-icon" aria-hidden="true">in</span><a href="https://www.linkedin.com/in/daniela-klein-0a66471a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><span class="contact-icon" aria-hidden="true">X</span><a href="https://www.xing.com/profile/Daniela_Klein70" target="_blank" rel="noopener noreferrer">XING</a></li>
+            <li><span class="contact-icon" aria-hidden="true">●</span><span>Hamburg, Deutschland</span></li>
+          </ul>
+        </section>
+        <!-- END: CONTACT -->
+
+        <!-- START: CORE COMPETENCIES -->
+        <section class="sidebar-section" aria-labelledby="skills-heading">
+          <h2 id="skills-heading">Kernkompetenzen</h2>
+          <div class="skill-group">
+            <h3>Projekt &amp; Delivery</h3>
+            <p>Projekt-Lifecycle, Agile Delivery, Scrum, Kanban, Jira, Confluence, GitHub, Notion, Workshops</p>
+          </div>
+          <div class="skill-group">
+            <h3>Produkt</h3>
+            <p>Discovery bis Launch, Requirements Engineering, Priorisierung, Business Cases, Qualitäts- und Erfolgskriterien</p>
+          </div>
+          <div class="skill-group">
+            <h3>Technologie</h3>
+            <p>AI/ML-Grundlagen, Python, MLOps, CI/CD, HTML/CSS, JavaScript, Vue.js, React, Shopify/Liquid</p>
+          </div>
+          <div class="skill-group">
+            <h3>Kommunikation</h3>
+            <p>Stakeholder Management, Schnittstellenmoderation, Mentoring, Dokumentation, interdisziplinäre Zusammenarbeit</p>
+          </div>
+        </section>
+        <!-- END: CORE COMPETENCIES -->
+
+        <!-- START: LANGUAGES -->
+        <section class="sidebar-section" aria-labelledby="languages-heading">
+          <h2 id="languages-heading">Sprachen</h2>
+          <ul class="plain-list language-list">
+            <li><span>Deutsch</span><span>Muttersprache</span></li>
+            <li><span>Englisch</span><span>Fließend</span></li>
+            <li><span>Spanisch</span><span>Grundkenntnisse</span></li>
+          </ul>
+        </section>
+        <!-- END: LANGUAGES -->
+      </aside>
+      <!-- END: SIDEBAR — PAGE 1 ONLY -->
+
+      <div class="intro-main">
+        <!-- START: HEADER -->
+        <header>
+          <p class="eyebrow">Curriculum Vitae · Hamburg</p>
+          <h1 id="resume-title">Daniela Klein</h1>
+          <p class="role-title">Technical Project Lead · Schnittstelle zwischen Technologie, Design &amp; Business</p>
+          <p class="lead">Mehr als zehn Jahre Erfahrung in der Frontend-Entwicklung haben mir ein tiefes Verständnis für digitale Produkte und die Zusammenarbeit verschiedener Fachbereiche vermittelt. Heute verbinde ich technisches Know-how mit strukturierter Projektarbeit und entwickle mich durch meine Weiterbildung im AI Project Management gezielt in Richtung Projektmanagement weiter.</p>
+        </header>
+        <!-- END: HEADER -->
+
+        <!-- START: PROFESSIONAL EXPERIENCE -->
+        <section class="section" aria-labelledby="experience-heading">
+          <div class="section-heading"><h2 id="experience-heading">Berufserfahrung</h2></div>
+
+          <!-- START: WORK STATION PATRICK & FRIENDS -->
+          <article class="station">
+            <div class="station-head">
+              <h3>Senior Frontend Development · Projekt- &amp; Delivery-Fokus</h3>
+              <span class="date">09/2018–10/2025</span>
+            </div>
+            <p class="company">Patrick &amp; Friends · Hamburg · projektbasierte Zusammenarbeit</p>
+            <ul>
+              <li>Koordination von Anforderungen und technischer Umsetzung zwischen Kundenseite, Design, Backend und Frontend; Überführung komplexer Briefings in umsetzbare Ziele und transparente nächste Schritte.</li>
+              <li>Begleitung digitaler Produkte und Relaunches von Konzeption und Aufwandseinschätzung über Umsetzung und Qualitätssicherung bis zum Release.</li>
+              <li>Moderation von Abstimmungen, Dokumentation von Entscheidungen in Jira und Confluence sowie Sicherstellung der Anschlussfähigkeit zwischen kreativen und technischen Gewerken.</li>
+              <li>Verantwortung für Onboarding und Mentoring, Vermittlung von Projektstrukturen sowie Etablierung wartbarer Komponenten- und Qualitätsstandards.</li>
+              <li>Sicherstellung von Usability, Accessibility nach WCAG, Performance und konsistenter Design-System-Umsetzung in E-Commerce- und Content-Projekten.</li>
+            </ul>
+            <p class="impact-note"><strong>Projektumfeld:</strong> Shopify, Shopware, Spryker, WordPress · u. a. KORO, FOODIST, LOUIS und Braaker Mühle</p>
+          </article>
+          <!-- END: WORK STATION PATRICK & FRIENDS -->
+
+          <!-- START: WORK STATION DEEPBLUE -->
+          <article class="station">
+            <div class="station-head">
+              <h3>Frontend Development · Digital Delivery</h3>
+              <span class="date">02/2015–08/2018</span>
+            </div>
+            <p class="company">deepblue networks · Hamburg · Unilever DACH</p>
+            <ul>
+              <li>Steuerung der operativen Umsetzung zahlreicher Websites, Relaunches, Newsletter und Promotion-Plattformen für mehr als zehn Unilever-Marken.</li>
+              <li>Koordination technischer Anforderungen mit internen Teams und externen Agenturen sowie transparente Darstellung von Abhängigkeiten, Qualitätskriterien und Timings.</li>
+              <li>Entwicklung und Pflege einer modularen White-Label-Plattform für wiederverwendbare Lösungen und konsistente Markenauftritte über mehrere Brand-Ökosysteme.</li>
+              <li>Begleitung von Reviews und Releases, Sicherstellung der Brand Consistency sowie Dokumentation von Entscheidungen und Umsetzungsständen für Stakeholder.</li>
+            </ul>
+            <p class="impact-note"><strong>Markenumfeld:</strong> u. a. Knorr, Dove, AXE und Magnum</p>
+          </article>
+          <!-- END: WORK STATION DEEPBLUE -->
+        </section>
+        <!-- END: PROFESSIONAL EXPERIENCE -->
+      </div>
+    </article>
+    <!-- END: PAGE 1 -->
+
+    <!-- START: PAGE 2 — FULL WIDTH -->
+    <article class="page page--content" aria-labelledby="projects-heading">
+      <header class="running-head" aria-label="Dokumentkopf">
+        <strong>Daniela Klein</strong>
+        <span class="meta">Master-Lebenslauf · 02</span>
+      </header>
+
+      <!-- START: SELECTED PROJECT HISTORY -->
+      <section class="section" aria-labelledby="projects-heading">
+        <div class="section-heading"><h2 id="projects-heading">Ausgewählte Projekthistorie</h2></div>
+        <div class="timeline">
+          <article class="timeline-entry">
+            <div class="date-cell"><span class="date">08–10/2025</span></div>
+            <div class="content-cell"><h3>Netzkombyse · Weinbauer</h3><p>Technische Dienstleistung und Frontend-Delivery im digitalen Projektumfeld.</p></div>
+          </article>
+          <article class="timeline-entry">
+            <div class="date-cell"><span class="date">06–08/2025</span></div>
+            <div class="content-cell"><h3>STRIX · Deco Walther</h3><p>Frontend-Umsetzung für den E-Commerce-Auftritt mit Fokus auf Qualität und konsistente Designübertragung.</p></div>
+          </article>
+          <article class="timeline-entry">
+            <div class="date-cell"><span class="date">01–03/2025</span></div>
+            <div class="content-cell"><h3>Patrick &amp; Friends · Agentur-Relaunch</h3><p>Konzeptionelle Begleitung und technische Umsetzung des WordPress-Relaunches.</p></div>
+          </article>
+          <article class="timeline-entry">
+            <div class="date-cell"><span class="date">10–12/2024</span></div>
+            <div class="content-cell"><h3>WYN · elbcampus</h3><p>Gezielter Frontend-Support und strukturierte Übergabe im laufenden Projekt.</p></div>
+          </article>
+          <article class="timeline-entry">
+            <div class="date-cell"><span class="date">09/2023–11/2024</span></div>
+            <div class="content-cell"><h3>UDG · Möbel Martin</h3><p>Komplexe Frontend-Delivery in mehreren Projektphasen; Abstimmung technischer Anforderungen und Qualitätssicherung.</p></div>
+          </article>
+          <article class="timeline-entry">
+            <div class="date-cell"><span class="date">06–09/2024</span></div>
+            <div class="content-cell"><h3>DOKYO · The Singleton</h3><p>Umsetzung einer digitalen Markenpräsenz mit präziser Design-to-Code-Übersetzung.</p></div>
+          </article>
+          <article class="timeline-entry">
+            <div class="date-cell"><span class="date">07–08/2023</span></div>
+            <div class="content-cell"><h3>Patrick &amp; Friends · KORO</h3><p>Shopify Storefront-Expertise, Liquid-Umsetzung und technische Qualitätssicherung.</p></div>
+          </article>
+          <article class="timeline-entry">
+            <div class="date-cell"><span class="date">06/2021–06/2023</span></div>
+            <div class="content-cell"><h3>diva-e · ALDI Süd US &amp; DE</h3><p>Enterprise E-Commerce Frontend-Entwicklung in einem komplexen, markenübergreifenden Delivery-Umfeld.</p></div>
+          </article>
+          <article class="timeline-entry">
+            <div class="date-cell"><span class="date">08–12/2020</span></div>
+            <div class="content-cell"><h3>DEPT · Bouygues</h3><p>Frontend-Delivery und technische Umsetzung im Agenturverbund.</p></div>
+          </article>
+          <article class="timeline-entry">
+            <div class="date-cell"><span class="date">08/2019–04/2020</span></div>
+            <div class="content-cell"><h3>Bauer Verlag · Tech-Abteilung</h3><p>White-Label-Lösungen und Migrationen digitaler Magazinangebote.</p></div>
+          </article>
+        </div>
+      </section>
+      <!-- END: SELECTED PROJECT HISTORY -->
+
+      <!-- START: TECHNOLOGIES AND METHODS -->
+      <section class="section" aria-labelledby="methods-heading">
+        <div class="section-heading"><h2 id="methods-heading">Technologien &amp; Methoden</h2></div>
+        <h3>Projekt, Produkt &amp; Zusammenarbeit</h3>
+        <ul class="tag-list" aria-label="Projekt- und Methodenkompetenzen">
+          <li>Jira</li><li>Confluence</li><li>GitHub</li><li>Notion</li><li>Trello</li><li>Scrum</li><li>Kanban</li><li>Waterfall</li><li>Workshops</li><li>Stakeholder Management</li><li>Requirements Engineering</li><li>Discovery–Launch</li><li>Change Management</li><li>DSGVO</li>
+        </ul>
+        <h3 style="margin-top:4mm">Technologie &amp; Plattformen</h3>
+        <ul class="tag-list" aria-label="Technologien und Plattformen">
+          <li>AI/ML-Grundlagen</li><li>GenAI-Workflows</li><li>Prompt Engineering</li><li>Python</li><li>MLOps</li><li>CI/CD</li><li>SQL/NoSQL</li><li>AWS/GCP</li><li>HTML5/CSS3</li><li>JavaScript</li><li>Vue.js</li><li>React</li><li>Tailwind CSS</li><li>Shopify/Liquid</li><li>Shopware</li><li>Spryker</li><li>WordPress</li><li>Figma</li><li>WCAG/A11y</li>
+        </ul>
+      </section>
+      <!-- END: TECHNOLOGIES AND METHODS -->
+    </article>
+    <!-- END: PAGE 2 — FULL WIDTH -->
+
+    <!-- START: PAGE 3 — FULL WIDTH -->
+    <article class="page page--content" aria-labelledby="competencies-heading">
+      <header class="running-head" aria-label="Dokumentkopf">
+        <strong>Daniela Klein</strong>
+        <span class="meta">Master-Lebenslauf · 03</span>
+      </header>
+
+      <!-- START: COMPETENCY PROFILE -->
+      <section class="section" aria-labelledby="competencies-heading">
+        <div class="section-heading"><h2 id="competencies-heading">Kompetenzprofil</h2></div>
+        <div class="competency-grid">
+          <article class="competency-card"><h3>Projekt &amp; Delivery</h3><p>Strukturierung komplexer Vorhaben, Sichtbarmachung von Abhängigkeiten und Sicherung der Handlungsfähigkeit vom Briefing über Umsetzung und QA bis zum Release.</p></article>
+          <article class="competency-card"><h3>Produkt</h3><p>Verbindung von Nutzerperspektive, Business-Ziel und technischer Machbarkeit; Übersetzung von Anforderungen in priorisierbare Pakete und nachvollziehbare Erfolgskriterien.</p></article>
+          <article class="competency-card"><h3>Technologie</h3><p>Bewertung von Aufwand, Risiken und Lösungswegen auf Basis langjähriger Entwicklungspraxis sowie fundierte Abstimmung mit Engineering-Teams.</p></article>
+          <article class="competency-card"><h3>Kommunikation</h3><p>Verbindende Zusammenarbeit zwischen Disziplinen, Moderation unterschiedlicher Perspektiven und Schaffung eines gemeinsamen Verständnisses durch klare Dokumentation.</p></article>
+        </div>
+      </section>
+      <!-- END: COMPETENCY PROFILE -->
+
+      <!-- START: CONTINUING EDUCATION AND CERTIFICATIONS -->
+      <section class="section" aria-labelledby="certifications-heading">
+        <div class="section-heading"><h2 id="certifications-heading">Weiterbildung &amp; Zertifizierungen</h2></div>
+        <div class="education-grid">
+          <article class="credential credential--featured">
+            <p class="label">11/2025–04/2026 · neuefische | SPICED</p>
+            <h3>Weiterbildung AI Project Management</h3>
+            <p>AI-Produkt-Lifecycle von Discovery bis Launch, Agile/Scrum, AI Business Cases, Deployment-Strategien, LLMs, automatisierte Agents und Workflows, Metriken wie Precision, Recall und F1, DSGVO und Responsible AI sowie technische Integration mit Python, MLOps, Datenbanken und Cloud.</p>
+          </article>
+          <article class="credential credential--featured">
+            <p class="label">Shopify Certification</p>
+            <h3>Shopify Certified: Liquid Storefronts</h3>
+            <p>Liquid, individuelle Themes, Design-to-Code, Storefront-Architekturen und skalierbare E-Commerce-Umsetzung.</p>
+          </article>
+        </div>
+      </section>
+      <!-- END: CONTINUING EDUCATION AND CERTIFICATIONS -->
+
+      <!-- START: EDUCATION -->
+      <section class="section" aria-labelledby="education-heading">
+        <div class="section-heading"><h2 id="education-heading">Ausbildung</h2></div>
+        <article class="station">
+          <div class="station-head"><h3>Mediengestaltung Digital &amp; Print</h3><span class="date">10/2011–01/2015</span></div>
+          <p class="company">Hochschule Macromedia · Hamburg</p>
+          <p>Fundament in digitaler Gestaltung, visueller Kommunikation und mediengerechter Umsetzung; ergänzt durch praktische Agenturerfahrung bei netnomics sowie Scholz &amp; Friends.</p>
+        </article>
+        <article class="station">
+          <div class="station-head"><h3>Fachgebundene Hochschulreife</h3><span class="date">01–08/2015</span></div>
+          <p class="company">Berufsoberschule II</p>
+        </article>
+      </section>
+      <!-- END: EDUCATION -->
+
+      <!-- START: POSITIONING -->
+      <section class="section" aria-labelledby="positioning-heading">
+        <div class="section-heading"><h2 id="positioning-heading">Mehrwert für Projekte</h2></div>
+        <p>Realistische Strukturierung digitaler Delivery auf Basis langjähriger Umsetzungserfahrung. Der Design-Hintergrund stärkt den Blick für Nutzung und Qualität, die technische Erfahrung schafft Verlässlichkeit im Engineering und ausgeprägte Kommunikations- und Organisationsstärke ermöglicht gemeinsam tragfähige Ergebnisse.</p>
+      </section>
+      <!-- END: POSITIONING -->
+    </article>
+    <!-- END: PAGE 3 — FULL WIDTH -->
+
+  </main>
+
+  <div class="export-bar" aria-label="Dokumentaktionen">
+    <button class="export-button" type="button" onclick="window.print()">Lebenslauf als PDF exportieren</button>
+  </div>
+
+  <script>
+    (() => {
+      "use strict";
+      document.documentElement.classList.add("js");
+    })();
+  </script>
+</body>
+</html>
